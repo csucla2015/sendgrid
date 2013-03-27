@@ -1,0 +1,14 @@
+# JavaMail properties
+mail.transport.protocol=smtp
+mail.smtp.host = smtp.sendgrid.net
+mail.smtp.port = 587
+mail.smtp.auth = true
+
+# App properties
+SMTP_AUTH_USER = test-adacom
+SMTP_AUTH_PWD = [PROTECTED]
+X_SMTPAPI_FILE = X-SMTPAPI.json
+EMAIL_BODY_FILE = emailBody.html
+FROM = me@segmatix.com
+TO = a.giotis@adacom.net
+SUBJECT = Check the link !
