@@ -18,10 +18,10 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
         </dependency>
 
         <!--<dependency>-->
-            <!--<groupId>junit</groupId>-->
-            <!--<artifactId>junit</artifactId>-->
-            <!--<version>4.11</version>-->
-            <!--<scope>test</scope>-->
+        <!--<groupId>junit</groupId>-->
+        <!--<artifactId>junit</artifactId>-->
+        <!--<version>4.11</version>-->
+        <!--<scope>test</scope>-->
         <!--</dependency>-->
 
     </dependencies>
@@ -36,6 +36,14 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
                     <source>1.6</source>
                     <target>1.6</target>
                     <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.1</version>
+                <configuration>
+                    <mainClass>Main</mainClass>
                 </configuration>
             </plugin>
         </plugins>
