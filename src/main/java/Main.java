@@ -37,7 +37,7 @@ public class Main {
                 return new PasswordAuthentication(username, password);
             }
         };
-        Session mailSession = Session.getDefaultInstance(props, auth);
+        Session mailSession = Session.getDefaultInstance(props , auth);
         mailSession.setDebug(true);
         Transport transport = mailSession.getTransport();
 
@@ -64,11 +64,18 @@ public class Main {
         multipart.addBodyPart(part1);
         multipart.addBodyPart(part2);
 
-        message.setContent(multipart);
+        message.setContent(multipart); // (content, "text/plain; charset=utf-8");
         message.setFrom(new InternetAddress(props.getProperty("FROM")));
-        message.setSubject(props.getProperty("SUBJECT"));
+        message.setSubject(props.getProperty("SUBJECT")); // (subject, "UTF-8")
+        // InternetAddress[] ia = new InternetAddress[2];
+        // ia[0] =  new InternetAddress("x");
+        // ia[1] =  new InternetAddress("x");
+        // message.addRecipients(Message.RecipientType.TO, ia);
         message.addRecipient(Message.RecipientType.TO, new InternetAddress(props.getProperty("TO")));
+
         message.addHeader("X-SMTPAPI", xSmptHeader);
+        // message.saveChanges();
+        // part2.setHeader("Content-Transfer-Encoding", "quoted-printable"); // quoted-printable base64
         return message;
     }
 
